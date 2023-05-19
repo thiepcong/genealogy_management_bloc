@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/values/app_colors.dart';
 
 class Confirm extends StatefulWidget {
   const Confirm({super.key});
@@ -28,7 +29,7 @@ class _ConfirmState extends State<Confirm> {
               child: const Icon(
                 Icons.arrow_back_outlined,
                 size: 46,
-                color: Color.fromRGBO(148, 0, 0, 1),
+                color: AppColors.color_148_0_0_1,
               ),
             ),
             const SizedBox(
@@ -49,12 +50,12 @@ class _ConfirmState extends State<Confirm> {
                 decoration: InputDecoration(
                   hintText: 'Number',
                   focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color.fromRGBO(148, 0, 0, 1)),
+                    borderSide: BorderSide(color: AppColors.color_148_0_0_1),
                   ),
                   suffixIcon: IconButton(
                     icon: const Icon(
                       Icons.clear,
-                      color: Color.fromRGBO(148, 0, 0, 1),
+                      color: AppColors.color_148_0_0_1,
                     ),
                     onPressed: () {},
                   ),
@@ -82,7 +83,7 @@ class _ConfirmState extends State<Confirm> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: Color.fromRGBO(148, 0, 0, 1))),
+                      color: AppColors.color_148_0_0_1)),
             ),
           ],
         ),
@@ -94,7 +95,7 @@ class _ConfirmState extends State<Confirm> {
           onPressed: () {
             _showdialog(context);
           },
-          backgroundColor: const Color.fromRGBO(178, 0, 0, 1),
+          backgroundColor: AppColors.color_178_0_0_1,
           foregroundColor: const Color.fromRGBO(255, 255, 255, 1),
           mini: false,
           child: const Icon(

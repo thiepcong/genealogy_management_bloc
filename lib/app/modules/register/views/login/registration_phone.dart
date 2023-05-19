@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/values/app_colors.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -28,7 +29,7 @@ class _LoginState extends State<Login> {
               child: const Icon(
                 Icons.arrow_back_outlined,
                 size: 46,
-                color: Color.fromRGBO(148, 0, 0, 1),
+                color: AppColors.color_148_0_0_1,
               ),
             ),
             const SizedBox(
@@ -48,17 +49,17 @@ class _LoginState extends State<Login> {
                 decoration: InputDecoration(
                   hintText: 'Number',
                   focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color.fromRGBO(148, 0, 0, 1)),
+                    borderSide: BorderSide(color: AppColors.color_148_0_0_1),
                   ),
                   suffixIcon: IconButton(
                     icon: const Icon(
                       Icons.clear,
-                      color: Color.fromRGBO(148, 0, 0, 1),
+                      color: AppColors.color_148_0_0_1,
                     ),
                     onPressed: () {},
                   ),
                 ),
-                cursorColor: Color.fromRGBO(148, 0, 0, 1),
+                cursorColor: AppColors.color_148_0_0_1,
               ),
             ),
           ],
@@ -73,7 +74,7 @@ class _LoginState extends State<Login> {
             const Text(
               "Gửi mã xác nhận",
               style: TextStyle(
-                  color: Color.fromRGBO(148, 0, 0, 1),
+                  color: AppColors.color_148_0_0_1,
                   fontSize: 20,
                   fontWeight: FontWeight.w700),
             ),
@@ -125,7 +126,7 @@ Future<void> _showdialog(BuildContext context) async {
             children: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromRGBO(148, 0, 0, 1),
+                  primary:  AppColors.color_148_0_0_1,
                   padding: const EdgeInsets.only(
                       left: 120, right: 120, top: 10, bottom: 10),
                 ),

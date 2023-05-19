@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home/home.dart';
-import 'login/confirm.dart';
+import 'package:genealogy_management/app/modules/register/views/home/registration_info.dart';
 
 void main() {
   runApp(const MyApp());

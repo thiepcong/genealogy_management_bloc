@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/values/app_colors.dart';
 import 'package:intl/intl.dart';
 
 class Home extends StatefulWidget {
@@ -17,7 +18,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(178, 0, 0, 1),
+      backgroundColor: AppColors.color_178_0_0_1,
       body: Stack(
         children: [
           Column(
@@ -183,8 +184,7 @@ class _HomeState extends State<Home> {
                                           selectedGender = value.toString();
                                         });
                                       },
-                                      activeColor:
-                                          const Color.fromRGBO(148, 0, 0, 1),
+                                      activeColor: AppColors.color_148_0_0_1,
                                     ),
                                   ),
                                   Container(
@@ -198,8 +198,7 @@ class _HomeState extends State<Home> {
                                           selectedGender = value.toString();
                                         });
                                       },
-                                      activeColor:
-                                          const Color.fromRGBO(148, 0, 0, 1),
+                                      activeColor: AppColors.color_148_0_0_1,
                                     ),
                                   ),
                                 ],
@@ -255,7 +254,7 @@ class _HomeState extends State<Home> {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   shape: const CircleBorder(),
-                                  primary: const Color.fromRGBO(178, 0, 0, 1),
+                                  primary: AppColors.color_178_0_0_1,
                                   padding: const EdgeInsets.all(16),
                                 ),
                                 onPressed: () {},

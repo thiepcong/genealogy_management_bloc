@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/values/app_colors.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -104,7 +105,7 @@ class _WelcomeState extends State<Welcome> {
                       )),
                   TextSpan(
                     text: 'điều khoản',
-                    style: TextStyle(color: Color.fromRGBO(148, 0, 0, 1)),
+                    style: TextStyle(color: AppColors.color_148_0_0_1),
                   ),
                   TextSpan(
                       text: ' của chúng tôi ',
