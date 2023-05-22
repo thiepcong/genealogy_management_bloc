@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../../core/values/app_colors.dart';
+import '../../../core/values/app_colors.dart';
 import 'package:intl/intl.dart';
 
-class RegisterInfoView extends StatefulWidget {
-  const RegisterInfoView({super.key});
+class TreeCreate extends StatefulWidget {
+  const TreeCreate({super.key});
 
   @override
-  State<RegisterInfoView> createState() => _RegisterInfoViewState();
+  State<TreeCreate> createState() => _TreeCreateState();
 }
 
-class _RegisterInfoViewState extends State<RegisterInfoView> {
+class _TreeCreateState extends State<TreeCreate> {
   String selectedGender = "Nam";
   DateTime? selectedDate;
   final _formKey = GlobalKey<FormState>();
@@ -17,38 +17,47 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.color_178_0_0_1,
+      appBar: AppBar(
+        leading: Container(
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: AppColors.color_251_239_239_1,
+          ),
+          child: IconButton(
+            color: AppColors.color_178_0_0_1,
+            iconSize: 40,
+            onPressed: () {},
+            icon: const Icon(Icons.arrow_back_outlined),
+          ),
+        ),
+        title: const Text(
+          "Danh sách gia tộc",
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+        ),
+        actions: [
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color.fromRGBO(245, 245, 245, 1),
+            ),
+            child: IconButton(
+              color: Color.fromRGBO(194, 194, 194, 1),
+              iconSize: 40,
+              onPressed: () {},
+              icon: const Icon(Icons.arrow_forward_outlined),
+            ),
+          ),
+        ],
+        backgroundColor: AppColors.color_148_0_0_1,
+      ),
+      backgroundColor: const Color.fromRGBO(251, 239, 239, 1),
       body: Stack(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 130,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 30, bottom: 8),
-                child: const Text(
-                  "Chào mừng!",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 36,
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 30),
-                child: const Text(
-                  "Hãy cho chúng tôi biết thêm về bạn",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 64,
+                height: 102,
               ),
               Expanded(
                 child: Container(
@@ -74,7 +83,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                                 text: const TextSpan(
                                   children: <TextSpan>[
                                     TextSpan(
-                                      text: 'Tên',
+                                      text: 'Tên gia phả',
                                       style: TextStyle(
                                           color: Color.fromRGBO(0, 0, 0, 1),
                                           fontSize: 18,
@@ -106,7 +115,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                                   return null;
                                 },
                                 decoration: const InputDecoration(
-                                  hintText: 'Họ và tên',
+                                  hintText: 'Nhập tên dòng họ',
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         color:
@@ -121,7 +130,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                             ),
                             Container(
                               padding: const EdgeInsets.only(left: 20),
-                              child: const Text('Số điện thoại',
+                              child: const Text('Giả sử dòng họ',
                                   style: TextStyle(
                                       color: Color.fromRGBO(0, 0, 0, 1),
                                       fontSize: 18,
@@ -134,7 +143,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                                   fontSize: 15,
                                 ),
                                 decoration: InputDecoration(
-                                  hintText: '09012345678',
+                                  hintText: 'Nhập đôi nét về dòng họ của bạn',
                                   focusedBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         color:
@@ -149,74 +158,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                             ),
                             Container(
                               padding: const EdgeInsets.only(left: 20),
-                              child: RichText(
-                                text: const TextSpan(
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'Giới tính',
-                                      style: TextStyle(
-                                          color: Color.fromRGBO(0, 0, 0, 1),
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    TextSpan(
-                                        text: '*',
-                                        style: TextStyle(
-                                            color: Color.fromRGBO(255, 0, 0, 1),
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w700)),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 140,
-                                    child: RadioListTile(
-                                      title: const Text('Nam'),
-                                      value: 'Nam',
-                                      groupValue: selectedGender,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedGender = value.toString();
-                                        });
-                                      },
-                                      activeColor: AppColors.color_148_0_0_1,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 120,
-                                    child: RadioListTile(
-                                      title: const Text('Nữ'),
-                                      value: 'Nữ',
-                                      groupValue: selectedGender,
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedGender = value.toString();
-                                        });
-                                      },
-                                      activeColor: AppColors.color_148_0_0_1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              padding:
-                                  const EdgeInsets.only(left: 22, right: 34),
-                              child: const Divider(
-                                color: Color.fromRGBO(173, 173, 173, 1),
-                                thickness: 1,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 14,
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(left: 20),
-                              child: const Text('Ngày tháng năm sinh',
+                              child: const Text('Địa chỉ',
                                   style: TextStyle(
                                       color: Color.fromRGBO(0, 0, 0, 1),
                                       fontSize: 18,
@@ -232,14 +174,14 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                                     hintText: (selectedDate != null)
                                         ? DateFormat('dd/MM/yyyy')
                                             .format(selectedDate!)
-                                        : 'ngày/tháng/năm',
+                                        : 'Chọn Tỉnh/Thành',
                                     focusedBorder: const UnderlineInputBorder(
                                       borderSide: BorderSide(
                                           color:
                                               Color.fromRGBO(173, 173, 173, 1)),
                                     ),
                                     suffixIcon: IconButton(
-                                      icon: const Icon(Icons.calendar_today),
+                                      icon: const Icon(Icons.arrow_drop_down),
                                       onPressed: () {
                                         _selectDate(context);
                                       },
@@ -247,21 +189,61 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                                 cursorColor: const Color.fromRGBO(0, 0, 0, 1),
                               ),
                             ),
+                            const SizedBox(
+                              height: 14,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, right: 36),
+                              child: TextField(
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                ),
+                                decoration: InputDecoration(
+                                    hintText: (selectedDate != null)
+                                        ? DateFormat('dd/MM/yyyy')
+                                            .format(selectedDate!)
+                                        : 'Chọn Quận/Huyện',
+                                    focusedBorder: const UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color:
+                                              Color.fromRGBO(173, 173, 173, 1)),
+                                    ),
+                                    suffixIcon: IconButton(
+                                      icon: const Icon(Icons.arrow_drop_down),
+                                      onPressed: () {
+                                        _selectDate(context);
+                                      },
+                                    )),
+                                cursorColor: const Color.fromRGBO(0, 0, 0, 1),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 14,
+                            ),
                             Container(
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.only(top: 48),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  shape: const CircleBorder(),
-                                  primary: AppColors.color_178_0_0_1,
-                                  padding: const EdgeInsets.all(16),
+                              padding: const EdgeInsets.only(left: 20),
+                              child: const Text(
+                                  'Quan hệ của bạn với gia tộc này',
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(0, 0, 0, 1),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700)),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 20, right: 36),
+                              child: TextField(
+                                style: TextStyle(
+                                  fontSize: 15,
                                 ),
-                                onPressed: () {},
-                                child: const Icon(
-                                  Icons.done,
-                                  size: 36,
-                                  color: Color.fromRGBO(251, 239, 239, 1),
+                                decoration: InputDecoration(
+                                  hintText: 'Nhà nội, Nhà ngoại, Nhà vợ',
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color:
+                                            Color.fromRGBO(173, 173, 173, 1)),
+                                  ),
                                 ),
+                                cursorColor: Color.fromRGBO(0, 0, 0, 1),
                               ),
                             ),
                           ],
@@ -272,7 +254,7 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
             ],
           ),
           Positioned(
-              top: 216,
+              top: 48,
               left: 146,
               right: 146,
               child: ElevatedButton(
@@ -285,45 +267,9 @@ class _RegisterInfoViewState extends State<RegisterInfoView> {
                 child: const Icon(
                   Icons.camera_alt,
                   color: Color.fromRGBO(96, 96, 96, 1),
-                  size: 32,
+                  size: 36,
                 ),
               )),
-          Positioned(
-              top: 0,
-              right: 0,
-              child: Container(
-                  width: 125,
-                  height: 125,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(251, 239, 239, 1),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(125),
-                    ),
-                  ))),
-          Positioned(
-              top: 225,
-              left: 28,
-              child: Container(
-                  width: 47,
-                  height: 47,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(251, 239, 239, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(47),
-                    ),
-                  ))),
-          Positioned(
-              top: 208,
-              left: -4,
-              child: Container(
-                  width: 17,
-                  height: 17,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(251, 239, 239, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(17),
-                    ),
-                  ))),
         ],
       ),
     );

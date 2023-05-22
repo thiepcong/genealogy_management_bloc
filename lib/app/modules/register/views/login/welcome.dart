@@ -1,15 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/values/app_colors.dart';
+import '../../../../main_router.dart';
 
-class Welcome extends StatefulWidget {
-  const Welcome({super.key});
+class WelcomeView extends StatefulWidget {
+  const WelcomeView({super.key});
 
   @override
-  State<Welcome> createState() => _WelcomeState();
+  State<WelcomeView> createState() => _WelcomeViewState();
 }
 
-class _WelcomeState extends State<Welcome> {
+class _WelcomeViewState extends State<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,14 @@ class _WelcomeState extends State<Welcome> {
               height: 134,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () async {
+                final nextState =
+                    await context.router.push(const RegisterPhoneViewRoute());
+                // if (nextState != null) {
+                //   _nextState =
+                //       nextState as RegisterInformationState?;
+                // }
+              },
               child: Container(
                 padding: const EdgeInsets.only(
                     left: 48, right: 48, top: 16, bottom: 16),

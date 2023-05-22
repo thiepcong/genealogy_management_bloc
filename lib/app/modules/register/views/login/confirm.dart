@@ -1,14 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/values/app_colors.dart';
+import '../../../../main_router.dart';
 
-class Confirm extends StatefulWidget {
-  const Confirm({super.key});
+class ConfirmView extends StatefulWidget {
+  const ConfirmView({super.key});
 
   @override
-  State<Confirm> createState() => _ConfirmState();
+  State<ConfirmView> createState() => _ConfirmViewState();
 }
 
-class _ConfirmState extends State<Confirm> {
+class _ConfirmViewState extends State<ConfirmView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,8 +94,10 @@ class _ConfirmState extends State<Confirm> {
         width: 68,
         height: 68,
         child: FloatingActionButton(
-          onPressed: () {
-            _showdialog(context);
+          onPressed: () async {
+            // _showdialog(context);
+            final nextState =
+                await context.router.push(const RegisterInfoViewRoute());
           },
           backgroundColor: AppColors.color_178_0_0_1,
           foregroundColor: const Color.fromRGBO(255, 255, 255, 1),

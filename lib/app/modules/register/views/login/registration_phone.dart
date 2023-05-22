@@ -1,14 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/values/app_colors.dart';
+import '../../../../main_router.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class RegisterPhoneView extends StatefulWidget {
+  const RegisterPhoneView({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<RegisterPhoneView> createState() => _RegisterPhoneViewState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterPhoneViewState extends State<RegisterPhoneView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,8 +136,10 @@ Future<void> _showdialog(BuildContext context) async {
                   "Gửi",
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop();
+                onPressed: () async {
+                  // Navigator.of(context).pop();
+                  final nextState =
+                    await context.router.push(const ConfirmViewRoute());
                 },
               ),
               ElevatedButton(

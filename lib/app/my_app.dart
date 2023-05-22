@@ -1,32 +1,33 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:giapha_figma/app/route_app.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-// class MyApp extends StatefulWidget {
-//   const MyApp({
-//     super.key,
-//   });
+import 'route_app.dart';
 
-//   @override
-//   _MyAppState createState() => _MyAppState();
-// }
+class MyApp extends StatefulWidget {
+  const MyApp({
+    super.key,
+  });
 
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   void initState() {
-//     super.initState();
-//     // SystemChrome.setSystemUIOverlayStyle(
-//     //     SystemUiOverlayStyle(statusBarColor: Colors.transparent
-//     //         //color set to purple or set your own color
-//     //         ));
-//   }
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return const RouteApp(
-//         // initialAuthenState: widget.initialAuthenState,
-//         // initialDeepLink: widget.initialDeepLink,
-//         );
-//   }
-// }
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    // SystemChrome.setSystemUIOverlayStyle(
+    //     SystemUiOverlayStyle(statusBarColor: Colors.transparent
+    //         //color set to purple or set your own color
+    //         ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const RouteApp(
+        // initialAuthenState: widget.initialAuthenState,
+        // initialDeepLink: widget.initialDeepLink,
+        );
+  }
+}
